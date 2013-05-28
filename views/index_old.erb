@@ -6,54 +6,57 @@
 
     <!-- Including JQuery Underscore and Backbone -->
     <script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="/js/handlebars.js"></script>
     <script type="text/javascript" src="/js/underscore.js"></script>
     <script type="text/javascript" src="/js/backbone.js"></script>
-    <script type="text/javascript" src="/js/handlebars.js"></script>
-    <script type="text/javascript" src="/js/jquery.masonry.min.js"></script>
+
+
 
 
   </head>
   <body>
+
+
+    <p>Hello World</p>
+    <section class="main"></section>
+    <script type="text/handlebars-template" id='products_template'>
+    </script>
+
     <header>
       <article>
         <input type="text" placeholder="search">
       </article>
       <article>
-        <img src="" class="logo">Hawkerboard</img>
+        <img src="" class="logo">Logo</img>
       </article>
       <article>
         <menu>User Account Menu</menu>
       </article>
     </header>
-
-    <section id="container"></section>
-
-    
-    <script id="item-template" type="text/x-handlebars-template">
-      <article class="item">
+    <section id="container">
+      <article class="item" id="">
+        <section>
+          <img src="/images/fake.jpg">
+        </section>
         <header>
-          <h1>{{title}}</h1>
-          <p>{{description}}</p>
-          <p class="price">£{{price}}</p>
+          <h1>item name</h1>
+          <p>description</p>
+          <p>price</p>
           <dt>
-            {{#each tags}}
-            <p>{{this}}</p>
-            {{/each}}
+            <p>tag1</p>
+            <p>tag2</p>
+            <p>tag3</p>
           </dt>
         </header>
       </article>
-    </script>
+    </section>
 
-    <script type="text/javascript" src="/js/model.js"></script>
+
+    
+ 
     <script type="text/javascript" src="/js/view.js"></script>
     <script type="text/javascript" src="/js/router.js"></script>
-    
-    <script type="text/javascript">
-      $(function(){
-        new Hawkerboard();
-        Backbone.history.start({pushState: true});
-      });
-    </script>
+    <script type="text/javascript" src="/js/model.js"></script>
  </body>
-</html>
 
+</html>
