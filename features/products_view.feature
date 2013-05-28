@@ -16,11 +16,11 @@ Feature: View Products
 	- 
 
 	Scenario: View products
-		Given the following products are available:
+		Given I am on the Index Page
+		And the following products are available:
 		|product name	|product description	|product price 	|
 		|product 1		|flying car				|100			|
 		|product 2		|iphone					|100			|
-		And I am on the products page
 		Then I will see the following products:
 		|product name	|product description	|product price	|
 		|product 1		|flying car				|10             |

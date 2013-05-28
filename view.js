@@ -7,11 +7,25 @@ ProductsView = Backbone.View.extend({
 	  var template = Handlebars.compile(source);
 	  this.$el.html(template);
 
-	  this.listenTo(products, 'sync'. this.renderProducts);
-	  products.fetch();
+	  this.listenTo('products').forEach(this.renderProduct)
+	  products.fetch()
+
 	},
 
 	renderProducts: function(){
-		this.model.get('products').forEach
+		this.model.get('products').forEach(this.renderProduct);
+	},
+	renderProduct: function(){
+		var productView = new ProductView({el: '#product-list', model: product});
+		productView.render();
+	}
+});
+
+ProductView = Backbone.View.extend({
+
+	render: function(){
+		var source = $("#product_template").html();
+		var template = Handlebars.compile(source);
+		$("product-list").append(template)
 	}
 });

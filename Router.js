@@ -8,7 +8,10 @@ HB = Backbone.Router.extend({
 	},
 
 	index: function(){
-		var index = new IndexView({el: '.main'});
+		var index = new ProductsView({el: '.main'});
+		var products = new Products;
+		products.title = ''
+
 		index.render()
 	}
 })
