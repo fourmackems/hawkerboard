@@ -1,2 +1,19 @@
-.hello {
-  color: #000; }
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0; }
+
+menu {
+  margin: 0; }
+
+header {
+  min-height: 50px;
+  /* temp */
+  outline: 1px dashed black; }
+  header article {
+    width: 33.33333%;
+    float: left;
+    padding: 10px;
+    /* temp */
+    outline: 1px dashed black; }
