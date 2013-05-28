@@ -1,8 +1,8 @@
 development:
-   database: collaborator
+   database: hawkerboard
    host: localhost
 test:
-  database: collaborator_test
+  database: hawkerboard_test
   host: localhost
 
 production:
