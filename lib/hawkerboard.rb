@@ -14,7 +14,7 @@ class Hawkerboard < Sinatra::Base
   Mongoid.load!(File.join(File.dirname(__FILE__),'mongoid.yml'))
 
   get '/' do
-    erb :index
+    erb :homepage
   end
 
   get '/products' do
