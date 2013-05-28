@@ -1,9 +1,20 @@
 ItemView = Backbone.View.extend({
+	className: '.item',
+
 	render: function() {
 		var source = $("#item-template").html();
 		var template = Handlebars.compile(source);
-		var html = template(this.model.toJSON());
+		var context = this.model.toJSON();
+		context['cid'] = this.model.cid;
+		var html = template(context);
 		this.$el.append(html);
+		this.changeBackground();
+	},
+
+	changeBackground: function() {
+		var image = this.model.get('image')|| "../images/fake.jpg";
+		console.log(image);
+		var background = $("#"+this.model.cid).css("background", "url("+image+") center center no-repeat");
 	}
 });
 

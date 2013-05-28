@@ -28,11 +28,11 @@ header {
   /* temp */
   outline: 1px dashed red; }
   #container .item {
+    position: relative;
     width: 220px;
     float: left;
     margin: 10px;
     height: 300px;
-    background: url(../images/fake.jpg) center center no-repeat;
     background-size: cover;
     box-shadow: 1px 1px 5px black; }
     #container .item header {

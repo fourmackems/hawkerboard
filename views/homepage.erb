@@ -28,9 +28,9 @@
 
     <section id="container"></section>
 
-    
+
     <script id="item-template" type="text/x-handlebars-template">
-      <article class="item">
+      <article class="item" id="{{cid}}">
         <header>
           <h1>{{title}}</h1>
           <p>{{description}}</p>
@@ -47,7 +47,7 @@
     <script type="text/javascript" src="/js/model.js"></script>
     <script type="text/javascript" src="/js/view.js"></script>
     <script type="text/javascript" src="/js/router.js"></script>
-    
+
     <script type="text/javascript">
       $(function(){
         new Hawkerboard();
