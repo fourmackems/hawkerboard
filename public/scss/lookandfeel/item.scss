@@ -5,15 +5,13 @@
     width: 220px;
     float: left;
     margin: 10px;
-    height: 300px; // this could be judged by JS //
     background-size: cover;
-    box-shadow: 1px 1px 5px black;
+    box-shadow: 0px 0px 10px white;
 
-    header {
+    section {
       position: absolute;
       width: 100%;
       padding: 10px;
-      height: 120px;
       bottom: 0;
       background-color: rgba(255, 255, 255, 0.5);
       .price {
@@ -38,5 +36,5 @@
 
 
   /* temp */
-    outline: 1px dashed red;
+  overflow: hidden;
 }

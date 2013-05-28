@@ -14,17 +14,17 @@
 
   </head>
   <body>
-    <header>
-      <article>
+    <nav>
+      <article class="search">
         <input type="text" placeholder="search">
       </article>
-      <article>
-        <img src="" class="logo">Hawkerboard</img>
+      <article class="logo">
+        <img src="images/logo.jpg" class="logo" alt="hawkerboard">
       </article>
-      <article>
-        <menu>User Account Menu</menu>
+      <article class="your-account">
+        <menu>Your Account</menu>
       </article>
-    </header>
+    </nav>
 
     <section id="container"></section>
 
@@ -32,6 +32,9 @@
     <script id="item-template" type="text/x-handlebars-template">
       <article class="item" id="{{cid}}">
         <header>
+          <img src="{{image}}"
+        </header>
+        <section>
           <h1>{{title}}</h1>
           <p>{{description}}</p>
           <p class="price">£{{price}}</p>
@@ -40,7 +43,7 @@
             <p>{{this}}</p>
             {{/each}}
           </dt>
-        </header>
+        </section>
       </article>
     </script>
 
@@ -54,6 +57,17 @@
         Backbone.history.start({pushState: true});
       });
     </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('img').load(function(){
+            $("#container").masonry();
+        });
+        $("#container").masonry();
+    });
+    //note this is from stackoverflow solution not Masonary.js website recommendations //
+    </script>
+
  </body>
 </html>
 
