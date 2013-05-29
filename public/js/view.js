@@ -9,12 +9,22 @@ ItemView = Backbone.View.extend({
 		var html = template(context);
 		this.$el.append(html);
 		this.changeBackground();
+		this.vintageIt();
 	},
 
 	changeBackground: function() {
 		var image = this.model.get('image')|| "../images/fake.jpg";
-		console.log(image);
 		var background = $("#"+this.model.cid).css("background", "url("+image+") center center no-repeat");
+	},
+
+	vintageIt: function() {
+		 var options = {
+     };
+     var effect = {
+        vignette: 0.4,
+        sepia: true
+     };
+     $('#'+this.model.cid+" header img").vintage(options, effect);
 	}
 });
 

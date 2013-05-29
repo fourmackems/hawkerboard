@@ -44,9 +44,9 @@ nav {
     position: relative;
     width: 220px;
     float: left;
-    margin: 10px;
+    margin: 5px;
     background-size: cover;
-    box-shadow: 0px 0px 10px white; }
+    border: 10px solid white; }
     #container .item section {
       position: absolute;
       width: 100%;
