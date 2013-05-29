@@ -1,11 +1,17 @@
 nav {
-  background-color: white;
-  color: $blue;
+  background-color: $clouds;
+  color: $concrete;
 }
 
 .logo {
   img {
     width: 50%;
     margin: 0 25%;
+  }
+}
+
+.search {
+  input {
+    background: url(../images/search-2x.png) no-repeat center right;
   }
 }

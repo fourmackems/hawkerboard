@@ -3,7 +3,7 @@
 
 body {
   margin: 0;
-  background-color: #a09689; }
+  background-color: #7f8c8d; }
 
 h1, h2, h3, h4, p {
   margin: 0; }
@@ -27,12 +27,15 @@ nav {
     padding: 10px; }
 
 nav {
-  background-color: white;
-  color: #0077ad; }
+  background-color: #ecf0f1;
+  color: #95a5a6; }
 
 .logo img {
   width: 50%;
   margin: 0 25%; }
+
+.search input {
+  background: url(../images/search-2x.png) no-repeat center right; }
 
 #container {
   /* temp */
