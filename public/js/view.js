@@ -1,8 +1,16 @@
 ItemView = Backbone.View.extend({
 	className: '.item',
 
+  /*
+  	see stackoverflow/questions/11932125
+  */
+	events: function() {
+		var _events = {};
+		_events["click #" + this.model.cid] = 'displayProduct';
+		return _events;
+	},
+
 	displayProduct: function(){
-		console.log(this.model);
 		hawkerboard.navigate("product/"+this.model.cid, {trigger: true});
 	},
 
@@ -16,7 +24,6 @@ ItemView = Backbone.View.extend({
 		this.$el.append(html);
 		this.changeBackground();
 		this.vintageIt();
-		$("#"+cid).on('click',this.displayProduct,this);
 	},
 
 	changeBackground: function() {
