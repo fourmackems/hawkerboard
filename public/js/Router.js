@@ -1,11 +1,7 @@
 Hawkerboard = Backbone.Router.extend({
 
-	routes: {
-		"": "index",
-	},
-
-	index: function(){
-		var items = new Items([
+	initialize: function() {
+				this.items = new Items([
 			{"title": "brown Shoes", "price": "55", "description": "Churchs premium brown Shoes", "image": "../images/fake2.jpg",
 								"tags": ["brown", "mens", "brogue"]},
 								{"title": "black Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake3.jpg",
@@ -50,8 +46,22 @@ Hawkerboard = Backbone.Router.extend({
 								"tags": ["brown", "mens", "brogue"]}
 									]);
 
+	},
 
-		var product = new ProductView({el: '#container', collection: items});
-		product.render();
+	routes: {
+		"": "index",
+		"product/:the_cid": "productView",
+	},
+
+	index: function(){
+
+		var index = new IndexView({el: '#container', collection: this.items});
+		index.render();
+	},
+
+	productView: function(the_cid){
+		console.log(the_cid)
+		var productView = new ProductView({el: '#container'});
+		productView.renderItem(this.items.get(the_cid));
 	}
 })

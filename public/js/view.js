@@ -1,19 +1,22 @@
 ItemView = Backbone.View.extend({
-	events: {
-    'click #viewItem': 'viewItem'
-  },
-
 	className: '.item',
+
+	displayProduct: function(){
+		console.log(this.model);
+		hawkerboard.navigate("product/"+this.model.cid, {trigger: true});
+	},
 
 	render: function() {
 		var source = $("#item-template").html();
 		var template = Handlebars.compile(source);
 		var context = this.model.toJSON();
-		context['cid'] = this.model.cid;
+		var cid = this.model.cid;
+		context['cid'] = cid;
 		var html = template(context);
 		this.$el.append(html);
 		this.changeBackground();
 		this.vintageIt();
+		$("#"+cid).on('click',this.displayProduct,this);
 	},
 
 	changeBackground: function() {
@@ -32,10 +35,13 @@ ItemView = Backbone.View.extend({
 	}
 });
 
+
 ItemCardView = Backbone.View.extend({
 	render: function() {
 		var source = $("#product-template").html();
-		this.$el.append(source);
+		var template = Handlebars.compile(source);
+		var context = this.model.toJSON();
+		this.$el.html(source);
 	}
 });
 
@@ -54,7 +60,6 @@ IndexView = Backbone.View.extend({
 
 
 
-
 ProductView = Backbone.View.extend({
 	render: function() {
 		this.collection.forEach(this.renderItem);
@@ -65,8 +70,5 @@ ProductView = Backbone.View.extend({
 		itemCardView.render();
 	}
 
-	viewItem: function() {
-
-	}
 
 })
