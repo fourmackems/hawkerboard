@@ -71,8 +71,10 @@ AddItemFormView = Backbone.View.extend({
 
 
 IndexView = Backbone.View.extend({
+
 	render: function() {
 		this.collection.forEach(this.renderItem);
+		$('#add-item-button').on('click', this.displayAddItem);
 	},
 
 	displayAddItem: function(){
@@ -82,7 +84,6 @@ IndexView = Backbone.View.extend({
 	renderItem: function(item) {
 		var itemView = new ItemView({el: "#container", model: item});
 		itemView.render();
-		$('#add-item-button').on('click',displayAddItem);
 	}
 
 });
