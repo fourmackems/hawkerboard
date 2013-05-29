@@ -3,60 +3,88 @@
 
     <!-- Including our Stylesheets -->
   	<link rel="stylesheet" type="text/css" href='/css/main.css'>
+    <link rel="stylesheet" type="text/css" href='/css/flat-ui.css'>
 
     <!-- Including JQuery Underscore and Backbone -->
     <script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="/js/handlebars.js"></script>
     <script type="text/javascript" src="/js/underscore.js"></script>
     <script type="text/javascript" src="/js/backbone.js"></script>
+    <script type="text/javascript" src="/js/handlebars.js"></script>
+    <script type="text/javascript" src="/js/jquery.masonry.min.js"></script>
 
-
+    <script src="/js/jquery.vintage.js"></script>
 
 
   </head>
   <body>
-
-
-    <p>Hello World</p>
-    <section class="main"></section>
-    <script type="text/handlebars-template" id='products_template'>
-    </script>
-
-    <header>
-      <article>
+    <nav>
+      <article class="search">
+        <span class="search-logo">
         <input type="text" placeholder="search">
       </article>
-      <article>
-        <img src="" class="logo">Logo</img>
+      <article class="logo">
+        <img src="images/logo.jpg" class="logo" alt="hawkerboard">
       </article>
-      <article>
-        <menu>User Account Menu</menu>
+      <article class="your-account">
+        <menu>Your Account</menu>
       </article>
-    </header>
-    <section id="container">
-      <article class="item" id="">
-        <section>
-          <img src="/images/fake.jpg">
-        </section>
+    </nav>
+
+    <section id="container"></section>
+
+
+    <script id="item-template" type="text/x-handlebars-template">
+      <article class="item" id="{{cid}}">
         <header>
-          <h1>item name</h1>
-          <p>description</p>
-          <p>price</p>
-          <dt>
-            <p>tag1</p>
-            <p>tag2</p>
-            <p>tag3</p>
-          </dt>
+          <img src="{{image}}">
         </header>
+        <section>
+          <h1>{{title}}</h1>
+          <p>{{description}}</p>
+          <p class="price">£{{price}}</p>
+          <dt>
+            {{#each tags}}
+            <p>{{this}}</p>
+            {{/each}}
+          </dt>
+        </section>
       </article>
-    </section>
+    </script>
+
+    <script id="product-template" type="text/x-handlebars-template">
+    <article>
+      <header>
+        <p>Hello World</p>
+      </header>
+      <section>
+        <p>Hellow world Content</p>
+      </section>
+    </article>
+    </script>
 
 
-    
- 
+
+    <script type="text/javascript" src="/js/model.js"></script>
     <script type="text/javascript" src="/js/view.js"></script>
     <script type="text/javascript" src="/js/router.js"></script>
-    <script type="text/javascript" src="/js/model.js"></script>
- </body>
 
+    <script type="text/javascript">
+      $(function(){
+        new Hawkerboard();
+        Backbone.history.start({pushState: true});
+      });
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('img').load(function(){
+            $("#container").masonry();
+        });
+        $("#container").masonry();
+    });
+    //note this is from stackoverflow solution not Masonary.js website recommendations //
+    </script>
+
+ </body>
 </html>
+

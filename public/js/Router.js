@@ -25,13 +25,13 @@ Hawkerboard = Backbone.Router.extend({
 								{"title": "yellow Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake5.jpg",
 								"tags": ["brown", "mens", "brogue"]},
 								{"title": "brown Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake6.jpg",
-								"tags": ["brown", "mens", "brogue"]},
+								"tags": ["black", "ladies", "brogue"]},
 								{"title": "tomboy Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake7.jpg",
 								"tags": ["brown", "mens", "brogue"]},
 								{"title": "black Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake3.jpg",
 								"tags": ["brown", "mens", "brogue"]},
 								{"title": "blue Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake4.jpg",
-								"tags": ["brown", "mens", "brogue"]},
+								"tags": ["black", "ladies", "brogue"]},
 								{"title": "yellow Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake5.jpg",
 								"tags": ["brown", "mens", "brogue"]},
 								{"title": "brown Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake6.jpg",
@@ -41,7 +41,7 @@ Hawkerboard = Backbone.Router.extend({
 								{"title": "black Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake3.jpg",
 								"tags": ["brown", "mens", "brogue"]},
 								{"title": "blue Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake4.jpg",
-								"tags": ["brown", "mens", "brogue"]},
+								"tags": ["black", "ladies", "brogue"]},
 								{"title": "yellow Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake5.jpg",
 								"tags": ["brown", "mens", "brogue"]},
 								{"title": "brown Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake6.jpg",
@@ -49,7 +49,9 @@ Hawkerboard = Backbone.Router.extend({
 								{"title": "tomboy Shoes", "description": "Churchs premium brown Shoes", "image": "../images/fake7.jpg",
 								"tags": ["brown", "mens", "brogue"]}
 									]);
-		var index = new IndexView({el: '#container', collection: items});
-		index.render();
+
+
+		var product = new ProductView({el: '#container', collection: items});
+		product.render();
 	}
 })

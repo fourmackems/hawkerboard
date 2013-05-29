@@ -1,4 +1,8 @@
 ItemView = Backbone.View.extend({
+	events: {
+    'click #viewItem': 'viewItem'
+  },
+
 	className: '.item',
 
 	render: function() {
@@ -28,6 +32,15 @@ ItemView = Backbone.View.extend({
 	}
 });
 
+ItemCardView = Backbone.View.extend({
+	render: function() {
+		var source = $("#product-template").html();
+		this.$el.append(source);
+	}
+});
+
+
+
 IndexView = Backbone.View.extend({
 	render: function() {
 		this.collection.forEach(this.renderItem);
@@ -38,3 +51,22 @@ IndexView = Backbone.View.extend({
 		itemView.render();
 	}
 });
+
+
+
+
+ProductView = Backbone.View.extend({
+	render: function() {
+		this.collection.forEach(this.renderItem);
+	},
+
+	renderItem: function(item) {
+		var itemCardView = new ItemCardView({el: "#container", model: item});
+		itemCardView.render();
+	}
+
+	viewItem: function() {
+
+	}
+
+})

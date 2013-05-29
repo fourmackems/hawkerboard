@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'mongoid'
 
 class Hawkerboard < Sinatra::Base
-  
+
   #this class is a controller
   #this is the app too! - because it is inheriting from Sinatra::Base
 
@@ -12,7 +12,7 @@ class Hawkerboard < Sinatra::Base
   #Mongoid.load!(File.join(File.dirname(__FILE__),'mongoid.yml'))
 
   get '/' do
-    erb :homepage
+    erb :index
   end
 
 
