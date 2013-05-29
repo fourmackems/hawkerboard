@@ -9,7 +9,7 @@ class Hawkerboard < Sinatra::Base
   set :views, File.join(File.dirname(__FILE__), '../views')
   set :public_folder, File.join(File.dirname(__FILE__), '../public')
   # enable :sessions
-  #Mongoid.load!(File.join(File.dirname(__FILE__),'mongoid.yml'))
+  Mongoid.load!(File.join(File.dirname(__FILE__),'mongoid.yml'))
 
   get '/' do
     erb :index

@@ -3,6 +3,7 @@ ItemView = Backbone.View.extend({
 
   /*
   	see stackoverflow/questions/11932125
+  	searched for backbone.js dynamic events
   */
 	events: function() {
 		var _events = {};
@@ -48,8 +49,13 @@ ItemCardView = Backbone.View.extend({
 		var source = $("#product-template").html();
 		var template = Handlebars.compile(source);
 		var context = this.model.toJSON();
-		this.$el.html(source);
-	}
+		var cid = this.model.cid;
+		context['cid'] = cid;
+		var html = template(context);
+		this.$el.html(html);
+		console.log("Hello")
+	},
+
 });
 
 
@@ -68,10 +74,6 @@ IndexView = Backbone.View.extend({
 
 
 ProductView = Backbone.View.extend({
-	render: function() {
-		this.collection.forEach(this.renderItem);
-	},
-
 	renderItem: function(item) {
 		var itemCardView = new ItemCardView({el: "#container", model: item});
 		itemCardView.render();
