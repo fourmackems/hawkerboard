@@ -65,3 +65,16 @@ nav {
       background-color: rgba(255, 255, 255, 0.8);
       border-radius: 6px;
       text-align: center; }
+
+.form-holder {
+  width: 50%;
+  margin: 0 25%; }
+  .form-holder input {
+    width: 60%;
+    margin: 5px 20%;
+    float: left;
+    text-align: center; }
+  .form-holder button {
+    margin: 5px 30%;
+    float: left;
+    width: 40%; }
