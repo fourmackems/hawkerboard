@@ -53,8 +53,18 @@ ItemCardView = Backbone.View.extend({
 		context['cid'] = cid;
 		var html = template(context);
 		this.$el.html(html);
-		console.log("Hello")
 	},
+
+});
+
+AddItemFormView = Backbone.View.extend({
+	render: function() {
+		var source = $("#add-item-form-template").html();
+		var template = Handlebars.compile(source);
+		this.$el.html(source);
+	}
+
+
 
 });
 
@@ -65,10 +75,16 @@ IndexView = Backbone.View.extend({
 		this.collection.forEach(this.renderItem);
 	},
 
+	displayAddItem: function(){
+		hawkerboard.navigate("additem", {trigger: true});
+	},
+
 	renderItem: function(item) {
 		var itemView = new ItemView({el: "#container", model: item});
 		itemView.render();
+		$('#add-item-button').on('click',displayAddItem);
 	}
+
 });
 
 
@@ -78,6 +94,12 @@ ProductView = Backbone.View.extend({
 		var itemCardView = new ItemCardView({el: "#container", model: item});
 		itemCardView.render();
 	}
+});
 
+AddItemView = Backbone.View.extend({
+	render: function() {
+		var addItemForm = new AddItemFormView({el: "#container"})
+		addItemForm.render();
+	}
+});
 
-})

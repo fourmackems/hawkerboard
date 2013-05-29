@@ -51,10 +51,10 @@ Hawkerboard = Backbone.Router.extend({
 	routes: {
 		"": "index",
 		"product/:the_cid": "productView",
+		"additem": "addItem",
 	},
 
 	index: function(){
-
 		var index = new IndexView({el: '#container', collection: this.items});
 		index.render();
 	},
@@ -63,5 +63,11 @@ Hawkerboard = Backbone.Router.extend({
 		console.log(the_cid)
 		var productView = new ProductView({el: '#container'});
 		productView.renderItem(this.items.get(the_cid));
+	},
+
+	addItem: function(){
+		var addItemView = new AddItemView({el: '#container'});
+		addItemView.render();
 	}
+
 })

@@ -26,7 +26,7 @@
         <img src="images/logo.jpg" class="logo" alt="hawkerboard">
       </article>
       <article class="your-account">
-        <span class="btn">Sell your item</span>
+        <span id="add-item-button" class="btn">Sell your item</span>
         <menu>Your Account</menu>
       </article>
     </nav>
@@ -72,17 +72,17 @@
       </article>
     </script>
 
-    <script id="submit-form" type="text/javascript">
-      <article>
-      <form>
-        <input placeholder="Product Name">
-        <input placeholder="Product Price">
-        <input placeholder="Produce Description">
-        <input placeholder="Tags">
-        <input placeholder="Your Name">
-        <button class="btn">Submit for Sale</button>
-      </form>
-    </article>
+    <script id="add-item-form-template" type="text/x-handlebars-template">
+    <article>
+    <form>
+      <input placeholder="Product Name">
+      <input placeholder="Product Price">
+      <input placeholder="Produce Description">
+      <input placeholder="Tags">
+      <input placeholder="Your Name">
+      <button class="btn">Submit for Sale</button>
+    </form>
+  </article>
     </script>
 
 
