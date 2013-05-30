@@ -79,8 +79,11 @@ AddItemFormView = Backbone.View.extend({
 
 IndexView = Backbone.View.extend({
 
+
 	render: function() {
+    console.log(this)
 		this.collection.forEach(this.renderItem);
+    $('#searchbox').on('keyup', $.proxy(this.search, this));
 		$('#add-item-button').on('click', this.displayAddItem);
 	},
 
@@ -91,7 +94,14 @@ IndexView = Backbone.View.extend({
 	renderItem: function(item) {
 		var itemView = new ItemView({el: "#container", model: item});
 		itemView.render();
-	}
+	},
+
+  search: function() {
+    $('#container').html('');
+    var searchQuery = $('#searchbox').val();
+    var result = this.collection.where({title: searchQuery});
+    _.each(result, this.renderItem);
+  }
 });
 
 
