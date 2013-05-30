@@ -54,7 +54,6 @@ ItemCardView = Backbone.View.extend({
 		var html = template(context);
 		this.$el.html(html);
 	},
-
 });
 
 AddItemFormView = Backbone.View.extend({
@@ -63,11 +62,7 @@ AddItemFormView = Backbone.View.extend({
 		var template = Handlebars.compile(source);
 		this.$el.html(source);
 	}
-
-
-
 });
-
 
 
 IndexView = Backbone.View.extend({
@@ -85,9 +80,7 @@ IndexView = Backbone.View.extend({
 		var itemView = new ItemView({el: "#container", model: item});
 		itemView.render();
 	}
-
 });
-
 
 
 ProductView = Backbone.View.extend({
