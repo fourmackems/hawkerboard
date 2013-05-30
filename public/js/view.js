@@ -104,7 +104,7 @@ ProductView = Backbone.View.extend({
 
 AddItemView = Backbone.View.extend({
 	render: function() {
-		var addItemForm = new AddItemFormView({el: "#container"})
+		var addItemForm = new AddItemFormView({el: "#container", collection: this.collection})
 		addItemForm.render();
 	}
 });

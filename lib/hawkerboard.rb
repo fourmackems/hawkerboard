@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'mongoid'
+require_relative 'item'
 
 class Hawkerboard < Sinatra::Base
 

@@ -65,7 +65,7 @@ Hawkerboard = Backbone.Router.extend({
 	},
 
 	addItem: function(){
-		var addItemView = new AddItemView({el: '#container'});
+		var addItemView = new AddItemView({el: '#container', collection: this.items});
 		addItemView.render();
 	}
 
