@@ -3,7 +3,7 @@ ItemView = Backbone.View.extend({
 
   initialize: function() {
     Handlebars.registerHelper('itemImage', function() {
-      return this.image || '/images/fake.jpg' ;
+      return this.image || '/images/dummy.jpg' ;
     });
   },
 

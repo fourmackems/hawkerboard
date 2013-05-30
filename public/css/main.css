@@ -62,29 +62,49 @@ nav {
   overflow: hidden; }
   #container .item {
     position: relative;
-    width: 220px;
+    width: 240px;
     float: left;
     margin: 5px;
     background-size: cover;
-    border: 10px solid white; }
+    background-color: white;
+    border: 10px solid white;
+    min-height: 300px; }
     #container .item section {
       position: absolute;
+      outline: 1px dashed black;
       width: 100%;
       padding: 10px;
       bottom: 0;
-      background-color: rgba(255, 255, 255, 0.5); }
+      height: 50px;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.9); }
       #container .item section .price {
         text-align: center;
+        font-size: 28px;
+        padding: 10px;
+        color: #1abc9c; }
+      #container .item section h1 {
         font-size: 20px;
-        color: blue; }
-    #container .item dt p {
-      width: 30%;
-      margin: 0 1%;
-      float: left;
-      padding: 1px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 6px;
-      text-align: center; }
+        text-align: center; }
+      #container .item section p {
+        font-size: 16px; }
+    #container .item section:hover {
+      height: 180px; }
+    #container .item ul {
+      width: 100%;
+      margin: 0 auto; }
+      #container .item ul li {
+        margin: 0 1%;
+        float: left;
+        padding: 5px;
+        background-color: #2ecc71;
+        border-radius: 6px;
+        box-shadow: 0px 0px 5px #8e44ad;
+        text-align: center; }
+      #container .item ul li:hover {
+        background-color: #8e44ad;
+        box-shadow: 0px 0px 5px #2ecc71;
+        color: white; }
 
 .form-holder {
   width: 60%;
@@ -100,6 +120,9 @@ nav {
     margin: 5px 30%;
     float: left;
     width: 40%; }
+
+#item_description {
+  height: 80px; }
 
 .slider-holder {
   outline: 1px solid #2ecc71;
