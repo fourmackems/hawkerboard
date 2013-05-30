@@ -14,7 +14,9 @@
     <script type="text/javascript" src="/js/handlebars.js"></script>
     <script type="text/javascript" src="/js/jquery.masonry.min.js"></script>
 
-    <script src="/js/jquery.vintage.js"></script>
+    <script type="text/javascript" src="/js/modernizr.custom.46884.js"></script>
+    <script type="text/javascript" src="/js/jquery.vintage.js"></script>
+    <script type="text/javascript" src="/js/jquery.slicebox.js"></script>
 
 
   </head>
@@ -54,10 +56,39 @@
       </article>
     </script>
 
-    <script id="product-template" type="text/x-handlebars-template">
+    <!-- script id="product-template" type="text/x-handlebars-template">
     <article class="item" id="{{cid}}">
         <header>
           <img src="{{image}}">
+        </header>
+        <section>
+          <h1>{{title}}</h1>
+          <p>{{description}}</p>
+          <p class="price">£{{price}}</p>
+          <dt>
+            {{#each tags}}
+            <p>{{this}}</p>
+            {{/each}}
+          </dt>
+        </section>
+        <footer>
+        </footer>
+      </article>
+    </script-->
+
+    <script id="product-template" type="text/x-handlebars-template">
+      <article class="item" id="{{cid}}">
+        <header>
+          <img src="{{image}}">
+          <section id="itemDetail">
+          <ul id="sb-slider" class="sb-slider">
+            <li><a href="" target="_blank"><img src="/images/fake.jpg" alt="image1"/></a></li>
+            <li><a href="" target="_blank"><img src="/images/fake2.jpg" alt="image2"/></a></li>
+            <li><a href="" target="_blank"><img src="/images/fake3.jpg" alt="image3"/></a></li>
+            <li><a href="" target="_blank"><img src="/images/fake4.jpg" alt="image4"/></a></li>
+            <li><a href="" target="_blank"><img src="/images/fake5.jpg" alt="image5"/></a></li>
+          </ul>
+        </section>
         </header>
         <section>
           <h1>{{title}}</h1>
@@ -125,6 +156,58 @@
         $("#container").masonry();
     });
     //note this is from stackoverflow solution not Masonary.js website recommendations //
+    </script>
+
+
+    <script type="text/javascript" src="/js/jquery.slicebox.js"></script>
+
+    <script type="text/javascript">
+      $(function() {
+        var Page = (function() {
+          var $navArrows = $( '#nav-arrows' ).hide(),
+            $navDots = $( '#nav-dots' ).hide(),
+            $nav = $navDots.children( 'span' ),
+            $shadow = $( '#shadow' ).hide(),
+            slicebox = $( '#sb-slider' ).slicebox( {
+              onReady : function() {
+                $navArrows.show();
+                $navDots.show();
+                $shadow.show();
+              },
+              onBeforeChange : function( pos ) {
+                $nav.removeClass( 'nav-dot-current' );
+                $nav.eq( pos ).addClass( 'nav-dot-current' );
+              }
+            } ),
+            init = function() {
+              initEvents();
+            },
+            initEvents = function() {
+              // add navigation events
+              $navArrows.children( ':first' ).on( 'click', function() {
+                slicebox.next();
+                return false;
+              } );
+              $navArrows.children( ':last' ).on( 'click', function() {
+                slicebox.previous();
+                return false;
+              } );
+              $nav.each( function( i ) {
+                $( this ).on( 'click', function( event ) {
+                  var $dot = $( this );
+                  if( !slicebox.isActive() ) {
+                    $nav.removeClass( 'nav-dot-current' );
+                    $dot.addClass( 'nav-dot-current' );
+                  }
+                  slicebox.jump( i + 1 );
+                  return false;
+                } );
+              } );
+            };
+            return { init : init };
+        })();
+        Page.init();
+      });
     </script>
 
  </body>
