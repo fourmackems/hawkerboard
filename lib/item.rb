@@ -5,7 +5,8 @@ class Item
   field :title, type: String
   field :price, type: String #maybe this should be a decimal fixnum? (Matt)
   field :description, type: String
-  field :tags, type: String
+  field :tags, type: Array
+  field :image, type: Hash
 
   # relationships
   #has_and_belongs_to_one :user

@@ -1,6 +1,12 @@
 ItemView = Backbone.View.extend({
 	className: '.item',
 
+  initialize: function() {
+    Handlebars.registerHelper('itemImage', function() {
+      return this.image || '/images/fake.jpg' ;
+    });
+  },
+
   /*
   	see stackoverflow/questions/11932125
   	searched for backbone.js dynamic events
@@ -23,13 +29,7 @@ ItemView = Backbone.View.extend({
 		context['cid'] = cid;
 		var html = template(context);
 		this.$el.append(html);
-		this.changeBackground();
-		this.vintageIt();
-	},
-
-	changeBackground: function() {
-		var image = this.model.get('image')|| "../images/fake.jpg";
-		var background = $("#"+this.model.cid).css("background", "url("+image+") center center no-repeat");
+		//this.vintageIt();
 	},
 
 	vintageIt: function() {
@@ -72,6 +72,7 @@ AddItemFormView = Backbone.View.extend({
       price: $('#item_price').val(),
       description: $('#item_description').val(),
       tags: $('#item_tags').val(),
+      image: $('#item_image').val(),
     });
     hawkerboard.navigate("/", true);
    },

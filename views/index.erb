@@ -7,20 +7,13 @@
     <link rel="stylesheet" type="text/css" href='/css/flat-ui.css'>
     <link rel="stylesheet" type="text/css" href='/css/main.css'>
 
-    <!--link rel="stylesheet" type="text/css" href="/css/demo.css" /-->
-    <link rel="stylesheet" type="text/css" href="/css/slicebox.css" />
-    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
-
     <!-- Including JQuery Underscore and Backbone -->
     <script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="/js/underscore.js"></script>
     <script type="text/javascript" src="/js/backbone.js"></script>
     <script type="text/javascript" src="/js/handlebars.js"></script>
     <!--script type="text/javascript" src="/js/jquery.masonry.min.js"></script-->
-
-    <script type="text/javascript" src="/js/modernizr.custom.46884.js"></script>
-    <script type="text/javascript" src="/js/jquery.vintage.js"></script>
-    <script type="text/javascript" src="/js/jquery.slicebox.js"></script>
+    <!--script type="text/javascript" src="/js/jquery.vintage.js"></script-->
 
 
   </head>
@@ -45,18 +38,18 @@
     <script id="item-template" type="text/x-handlebars-template">
       <article class="item" id="{{cid}}">
         <header>
-          <!--img src="{{image}}"-->
-          <img src="images/fake.jpg">
+          <img src="{{itemImage}}">
+          <!--img src="images/fake.jpg"-->
         </header>
         <section>
           <h1>{{title}}</h1>
           <p>{{description}}</p>
           <p class="price">£{{price}}</p>
-          <dt>
+          <ul>
             {{#each tags}}
-            <p>{{this}}</p>
+            <li>{{this}}</li>
             {{/each}}
-          </dt>
+          </ul>
         </section>
       </article>
     </script>
@@ -64,8 +57,7 @@
     <script id="product-template" type="text/x-handlebars-template">
     <article class="item" id="{{cid}}">
         <header>
-          <!--img src="{{image}}"-->
-          <img src="images/fake.jpg">
+          <img src="{{image}}">
         </header>
         <section>
           <h1>{{title}}</h1>
@@ -91,7 +83,7 @@
       <input id="item_price" name="item_price" placeholder="give it a price">
       <input id="item_description" name="item_description" placeholder="describe it">
       <input id="item_tags" name="item_tags" placeholder="add some tags">
-      <input name="username" placeholder="your name">
+      <input id="item_image" name="item_image" placeholder="copy in an image URL">
       <button id="add-item" class="btn">Submit for Sale</button>
   </article>
     </script>
@@ -107,7 +99,7 @@
       });
     </script>
 
-    <script type="text/javascript">
+    <!-- script type="text/javascript">
     $(document).ready(function(){
         $('img').load(function(){
             $("#container").masonry();
@@ -115,7 +107,7 @@
         $("#container").masonry();
     });
     //note this is from stackoverflow solution not Masonary.js website recommendations //
-    </script>
+    </script-->
 
  </body>
 </html>
