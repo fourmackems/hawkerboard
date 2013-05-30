@@ -7,6 +7,10 @@
     <link rel="stylesheet" type="text/css" href='/css/flat-ui.css'>
     <link rel="stylesheet" type="text/css" href='/css/main.css'>
 
+    <link rel="stylesheet" type="text/css" href="/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="/css/slicebox.css" />
+    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+
     <!-- Including JQuery Underscore and Backbone -->
     <script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="/js/underscore.js"></script>
@@ -78,7 +82,7 @@
 
     <script id="product-template" type="text/x-handlebars-template">
       <article class="item" id="{{cid}}">
-        <header>
+      <header>
           <img src="{{image}}">
           <section id="itemDetail">
           <ul id="sb-slider" class="sb-slider">
@@ -89,6 +93,9 @@
             <li><a href="" target="_blank"><img src="/images/fake5.jpg" alt="image5"/></a></li>
           </ul>
         </section>
+        </header>
+        <header>
+          <img src="{{image}}">
         </header>
         <section>
           <h1>{{title}}</h1>
