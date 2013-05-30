@@ -60,7 +60,6 @@ Hawkerboard = Backbone.Router.extend({
 	},
 
 	productView: function(the_cid){
-		console.log(the_cid)
 		var productView = new ProductView({el: '#container'});
 		productView.renderItem(this.items.get(the_cid));
 	},

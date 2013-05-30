@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href='/css/flat-ui.css'>
     <link rel="stylesheet" type="text/css" href='/css/main.css'>
 
-    <link rel="stylesheet" type="text/css" href="/css/demo.css" />
+    <!--link rel="stylesheet" type="text/css" href="/css/demo.css" /-->
     <link rel="stylesheet" type="text/css" href="/css/slicebox.css" />
     <link rel="stylesheet" type="text/css" href="/css/custom.css" />
 
@@ -16,7 +16,7 @@
     <script type="text/javascript" src="/js/underscore.js"></script>
     <script type="text/javascript" src="/js/backbone.js"></script>
     <script type="text/javascript" src="/js/handlebars.js"></script>
-    <script type="text/javascript" src="/js/jquery.masonry.min.js"></script>
+    <!--script type="text/javascript" src="/js/jquery.masonry.min.js"></script-->
 
     <script type="text/javascript" src="/js/modernizr.custom.46884.js"></script>
     <script type="text/javascript" src="/js/jquery.vintage.js"></script>
@@ -60,7 +60,7 @@
       </article>
     </script>
 
-    <!-- script id="product-template" type="text/x-handlebars-template">
+    <script id="product-template" type="text/x-handlebars-template">
     <article class="item" id="{{cid}}">
         <header>
           <img src="{{image}}">
@@ -78,22 +78,22 @@
         <footer>
         </footer>
       </article>
-    </script-->
+    </script>
 
+    <!-- COMMENTED OUT FOR NOW
     <script id="product-template" type="text/x-handlebars-template">
       <article class="item" id="{{cid}}">
-      <header>
-          <img src="{{image}}">
+      <div class="slider-holder">
           <section id="itemDetail">
-          <ul id="sb-slider" class="sb-slider">
-            <li><a href="" target="_blank"><img src="/images/fake.jpg" alt="image1"/></a></li>
-            <li><a href="" target="_blank"><img src="/images/fake2.jpg" alt="image2"/></a></li>
-            <li><a href="" target="_blank"><img src="/images/fake3.jpg" alt="image3"/></a></li>
-            <li><a href="" target="_blank"><img src="/images/fake4.jpg" alt="image4"/></a></li>
-            <li><a href="" target="_blank"><img src="/images/fake5.jpg" alt="image5"/></a></li>
-          </ul>
-        </section>
-        </header>
+            <ul id="sb-slider" class="sb-slider">
+              <li><a href="" target="_blank"><img src="/images/fake.jpg" alt="image1"/></a></li>
+              <li><a href="" target="_blank"><img src="/images/fake2.jpg" alt="image2"/></a></li>
+              <li><a href="" target="_blank"><img src="/images/fake3.jpg" alt="image3"/></a></li>
+              <li><a href="" target="_blank"><img src="/images/fake4.jpg" alt="image4"/></a></li>
+              <li><a href="" target="_blank"><img src="/images/fake5.jpg" alt="image5"/></a></li>
+            </ul>
+          </section>
+        </div>
         <header>
           <img src="{{image}}">
         </header>
@@ -110,7 +110,7 @@
         <footer>
         </footer>
       </article>
-    </script>
+    </script -->
 
     <script id="add-item-form-template" type="text/x-handlebars-template">
     <article class="form-holder">
@@ -127,22 +127,6 @@
     </form>
   </article>
     </script>
-
-    <!-- DUMMY FORM
-
-  <h2>Create an account</h2>
-<form method='POST' action='/sign_up' id='sign-in-form'>
-<input name='username' type='text' placeholder='choose a username' />
-<input name='password' type='password' placeholder='choose a password' />
-<button class="btn btn-primary">Sign up</button>
-</form>
-
-  -->
-
-
-
-
-
 
     <script type="text/javascript" src="/js/model.js"></script>
     <script type="text/javascript" src="/js/view.js"></script>
