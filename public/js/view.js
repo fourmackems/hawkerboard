@@ -57,11 +57,26 @@ ItemCardView = Backbone.View.extend({
 });
 
 AddItemFormView = Backbone.View.extend({
-	render: function() {
-		var source = $("#add-item-form-template").html();
-		var template = Handlebars.compile(source);
-		this.$el.html(source);
-	}
+  events: {
+    'click #add-item': 'submit'
+  },
+
+  render: function() {
+    var source = $("#add-item-form-template").html();
+    var template = Handlebars.compile(source);
+    this.$el.html(source);
+  },
+  submit: function() {
+    this.collection.create({
+      title: $('#item_name').val(),
+      price: $('#item_price').val(),
+      description: $('#item_description').val(),
+      tags: $('#item_tags').val(),
+    });
+  }
+});
+
+
 });
 
 
