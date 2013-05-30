@@ -16,6 +16,20 @@ class Hawkerboard < Sinatra::Base
   end
 
 
+  # for allowing a user to sign up
+  post 'sign_up' do
+    user = User.create!(:username =>params['username'], :password => params['password'])
+    #so how do we redirect to the add a new item but within the backbone app...!? (Matt)
+  end
+
+
+  # for adding a new item
+  post '/add_item' do
+    Item.create(:item_name => params['item_name'], :item_price => params['item_price'], :item_description => params['item_description'], :item_tags => params['item_tags'])
+    #so how do we redirect to a confirmation page but within the backbone app...!? (Matt)
+  end
+
+
 
 
   # start the server if ruby file executed directly
