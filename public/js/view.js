@@ -104,7 +104,8 @@ IndexView = Backbone.View.extend({
   search: function() {
     $('#container').html('');
     var searchQuery = $('#searchbox').val();
-    var result = this.collection.where({title: searchQuery});
+    var result = this.collection._.filter({title: searchQuery});
+    //var result = this.collection.where({title: searchQuery});
     _.each(result, this.renderItem);
   }
 });

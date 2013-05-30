@@ -25,9 +25,9 @@ nav {
     float: left;
     padding: 10px; }
   nav .search {
-    width: 25%; }
-  nav .logo {
     width: 50%; }
+  nav .logo {
+    width: 25%; }
   nav .your-account {
     width: 25%; }
 
@@ -44,10 +44,18 @@ nav {
   margin: 0 25%; }
 
 .search input {
-  background: url(../images/search.png) no-repeat center right;
-  padding: 15px;
+  background: url(../images/search-2x.png) no-repeat center right;
+  padding: 30px 15px;
+  font-size: 30px;
+  line-height: 30px;
   margin: 0;
-  color: #ecf0f1; }
+  color: #ecf0f1;
+  width: 70%;
+  margin: 0 15%; }
+
+.search-logo {
+  width: 80%;
+  margin: 0 5%; }
 
 #container {
   /* temp */
