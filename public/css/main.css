@@ -3,7 +3,7 @@
 
 body {
   margin: 0;
-  background-color: #7f8c8d; }
+  background-color: #ecf0f1; }
 
 h1, h2, h3, h4, p {
   margin: 0; }
@@ -22,20 +22,32 @@ nav {
   min-height: 50px;
   overflow: hidden; }
   nav article {
-    width: 33.33333%;
     float: left;
     padding: 10px; }
+  nav .search {
+    width: 25%; }
+  nav .logo {
+    width: 50%; }
+  nav .your-account {
+    width: 25%; }
 
 nav {
-  background-color: #ecf0f1;
-  color: #95a5a6; }
+  background-color: #bdc3c7;
+  color: #ecf0f1; }
+  nav h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px; }
 
 .logo img {
   width: 50%;
   margin: 0 25%; }
 
 .search input {
-  background: url(../images/search-2x.png) no-repeat center right; }
+  background: url(../images/search.png) no-repeat center right;
+  padding: 15px;
+  margin: 0;
+  color: #ecf0f1; }
 
 #container {
   /* temp */
@@ -67,8 +79,10 @@ nav {
       text-align: center; }
 
 .form-holder {
-  width: 50%;
-  margin: 0 25%; }
+  width: 60%;
+  margin: 5% 20%; }
+  .form-holder header {
+    text-align: center; }
   .form-holder input {
     width: 60%;
     margin: 5px 20%;

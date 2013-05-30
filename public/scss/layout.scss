@@ -7,8 +7,16 @@ nav {
   min-height: 50px;
   overflow: hidden;
   article {
-    width: 33.33333%;
     float: left;
     padding: 10px;
+  }
+  .search {
+    width: 25%;
+  }
+  .logo {
+    width: 50%;
+  }
+  .your-account {
+    width: 25%;
   }
 }

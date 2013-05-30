@@ -25,11 +25,11 @@
         <input type="text" placeholder="search">
       </article>
       <article class="logo">
-        <img src="images/logo.jpg" class="logo" alt="hawkerboard">
+        <h1>hawkerboard.co.uk</h1>
       </article>
       <article class="your-account">
+        <span id="sign-up-button" class="btn btn-info">Sign Up</span>
         <span id="add-item-button" class="btn">Sell your item</span>
-        <menu>Your Account</menu>
       </article>
     </nav>
 
@@ -76,12 +76,15 @@
 
     <script id="add-item-form-template" type="text/x-handlebars-template">
     <article class="form-holder">
+    <header>
+      <h1>Add an item to start hawking</h1>
+    </header>
     <form>
-      <input name="item_name" placeholder="Product Name">
-      <input name="item_price" placeholder="Product Price">
-      <input name="item_description" placeholder="Produce Description">
-      <input name="item_tags"placeholder="Tags">
-      <input name="username" placeholder="Your Name">
+      <input name="item_name" placeholder="name of the item">
+      <input name="item_price" placeholder="give it a price">
+      <input name="item_description" placeholder="describe it">
+      <input name="item_tags"placeholder="add some tags">
+      <input name="username" placeholder="your name">
       <button class="btn">Submit for Sale</button>
     </form>
   </article>
