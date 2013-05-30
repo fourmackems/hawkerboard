@@ -73,15 +73,19 @@ AddItemFormView = Backbone.View.extend({
       description: $('#item_description').val(),
       tags: $('#item_tags').val(),
     });
-  }
+    hawkerboard.navigate("/", true);
+   },
 });
 
 
 IndexView = Backbone.View.extend({
 
+	initialize: function() {
+		this.listenTo(this.collection, 'sync', this.render);
+	},
 
 	render: function() {
-    console.log(this)
+		$('#container').html('');
 		this.collection.forEach(this.renderItem);
     $('#searchbox').on('keyup', $.proxy(this.search, this));
 		$('#add-item-button').on('click', this.displayAddItem);
