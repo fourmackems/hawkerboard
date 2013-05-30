@@ -77,9 +77,6 @@ AddItemFormView = Backbone.View.extend({
 });
 
 
-});
-
-
 IndexView = Backbone.View.extend({
 
 	render: function() {
