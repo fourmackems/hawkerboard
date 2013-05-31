@@ -121,7 +121,7 @@ IndexView = Backbone.View.extend({
 
   logout: function() {
     $.get('/logout', {}, function() {
-      document.cookie = 'rack.session=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      $.removeCookie("rack.session", { path: '/' });
       hawkerboard.navigate("/", true);
     });
   }
