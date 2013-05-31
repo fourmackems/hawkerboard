@@ -1,0 +1,83 @@
+// Media Queries //
+
+@media (max-width: 500px) {
+
+  body {
+    margin: 0;
+    width: 100%;
+  }
+
+  #container {
+    width: 98%;
+    .item {
+      width: 48%;
+      margin: 1%;
+    }
+    .single-item {
+      outline: 1px solid black;
+    }
+  }
+
+  nav {
+    width: 100%;
+    article {
+      padding: 5px 0;
+      margin: 0;
+      text-align: center;
+      h1 {
+        font-size: 20px;
+      }
+    }
+    .search {
+      width: 90%;
+      input {
+        background: url(../images/search.png) no-repeat center right;
+        padding: 20px 15px;
+        font-size: 20px;
+        line-height: 20px;
+        margin: 0;
+        color: $clouds;
+        width: 98%;
+        margin: 0 1%;
+      }
+    }
+    .logo {
+      width: 100%;
+      display: none;
+    }
+    .your-account {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+
+.form-holder {
+  width: 100%;
+  margin: 2px 0;
+  outline: 1px dashed black;
+  header {
+    text-align: center;
+    h1 {
+      font-size: 20px;
+    }
+  }
+  input {
+    width: 70%;
+    margin: 5px 15%;
+    float: left;
+    text-align: center;
+    border-radius: 4px;
+  }
+  button {
+    margin: 5px 30%;
+    float: left;
+    width: 40%;
+    height: 40px;
+  }
+}
+
+#item_description {
+  height: 80px;
+}
+
+} // end of mediaquery

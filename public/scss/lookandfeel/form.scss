@@ -1,6 +1,7 @@
 .form-holder {
   width: 60%;
   margin: 5% 20%;
+  outline: 1px dashed black;
   header {
     text-align: center;
   }
@@ -15,4 +16,8 @@
     float: left;
     width: 40%;
   }
+}
+
+#item_description {
+  height: 80px;
 }

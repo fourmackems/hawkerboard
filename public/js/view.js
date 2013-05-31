@@ -1,6 +1,12 @@
 ItemView = Backbone.View.extend({
 	className: '.item',
 
+  initialize: function() {
+    Handlebars.registerHelper('itemImage', function() {
+      return this.image || '/images/dummy.jpg' ;
+    });
+  },
+
   /*
   	see stackoverflow/questions/11932125
   	searched for backbone.js dynamic events
@@ -23,13 +29,7 @@ ItemView = Backbone.View.extend({
 		context['cid'] = cid;
 		var html = template(context);
 		this.$el.append(html);
-		this.changeBackground();
-		this.vintageIt();
-	},
-
-	changeBackground: function() {
-		var image = this.model.get('image')|| "../images/fake.jpg";
-		var background = $("#"+this.model.cid).css("background", "url("+image+") center center no-repeat");
+		//this.vintageIt();
 	},
 
 	vintageIt: function() {
@@ -72,6 +72,7 @@ AddItemFormView = Backbone.View.extend({
       price: $('#item_price').val(),
       description: $('#item_description').val(),
       tags: $('#item_tags').val(),
+      image: $('#item_image').val(),
     });
     hawkerboard.navigate("/", true);
    },
@@ -90,6 +91,8 @@ IndexView = Backbone.View.extend({
     $('#searchbox').on('keyup', $.proxy(this.search, this));
 		$('#add-item-button').on('click', this.displayAddItem);
     $('#sign-up-button').on('click', this.signup);
+    $('#login-button').on('click', this.login);
+    $('#logout-button').on('click', this.logout);
 	},
 
 	displayAddItem: function(){
@@ -110,7 +113,15 @@ IndexView = Backbone.View.extend({
 
   signup: function() {
     hawkerboard.navigate("/sign-up", true);
-  }
+  },
+
+  login: function() {
+    hawkerboard.navigate("/login", true);
+  },
+
+  logout: function() {
+    hawkerboard.navigate("/logout", true);
+  },
 });
 
 
@@ -143,6 +154,28 @@ SignupView = Backbone.View.extend({
     var user = new User({username: username, password: password});
     user.save();
     hawkerboard.navigate("/", true);
+  }
+});
+
+LoginView = Backbone.View.extend({
+  events: {
+    "click #login": "login"
+  },
+  render: function() {
+    var source = $("#login-form-template").html();
+    var template = Handlebars.compile(source);
+    this.$el.html(template);
+  },
+  login: function() {
+    var username = $('#username').val();
+    var password = $('#password').val();
+    $.post('/login', {username: username, password: password}, function(data) {
+      if(data['logged_in'] == true) {
+      hawkerboard.navigate("/", {trigger: true}); //Ask Enrique why trigger is different to just putting true
+      } else {
+        alert('incorrect username or password');
+      }
+    })
   }
 });
 

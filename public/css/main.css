@@ -25,9 +25,9 @@ nav {
     float: left;
     padding: 10px; }
   nav .search {
-    width: 25%; }
-  nav .logo {
     width: 50%; }
+  nav .logo {
+    width: 25%; }
   nav .your-account {
     width: 25%; }
 
@@ -44,43 +44,72 @@ nav {
   margin: 0 25%; }
 
 .search input {
-  background: url(../images/search.png) no-repeat center right;
-  padding: 15px;
+  background: url(../images/search-2x.png) no-repeat center right;
+  padding: 30px 15px;
+  font-size: 30px;
+  line-height: 30px;
   margin: 0;
-  color: #ecf0f1; }
+  color: #ecf0f1;
+  width: 70%;
+  margin: 0 15%; }
+
+.search-logo {
+  width: 80%;
+  margin: 0 5%; }
 
 #container {
   /* temp */
   overflow: hidden; }
   #container .item {
     position: relative;
-    width: 220px;
+    width: 240px;
     float: left;
     margin: 5px;
     background-size: cover;
-    border: 10px solid white; }
+    background-color: white;
+    border: 10px solid white;
+    min-height: 300px; }
     #container .item section {
       position: absolute;
+      outline: 1px dashed black;
       width: 100%;
       padding: 10px;
       bottom: 0;
-      background-color: rgba(255, 255, 255, 0.5); }
+      height: 50px;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.9); }
       #container .item section .price {
         text-align: center;
+        font-size: 28px;
+        padding: 10px;
+        color: #1abc9c; }
+      #container .item section h1 {
         font-size: 20px;
-        color: blue; }
-    #container .item dt p {
-      width: 30%;
-      margin: 0 1%;
-      float: left;
-      padding: 1px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 6px;
-      text-align: center; }
+        text-align: center; }
+      #container .item section p {
+        font-size: 16px; }
+    #container .item section:hover {
+      height: 180px; }
+    #container .item ul {
+      width: 100%;
+      margin: 0 auto; }
+      #container .item ul li {
+        margin: 0 1%;
+        float: left;
+        padding: 5px;
+        background-color: #2ecc71;
+        border-radius: 6px;
+        box-shadow: 0px 0px 5px #8e44ad;
+        text-align: center; }
+      #container .item ul li:hover {
+        background-color: #8e44ad;
+        box-shadow: 0px 0px 5px #2ecc71;
+        color: white; }
 
 .form-holder {
   width: 60%;
-  margin: 5% 20%; }
+  margin: 5% 20%;
+  outline: 1px dashed black; }
   .form-holder header {
     text-align: center; }
   .form-holder input {
@@ -93,9 +122,67 @@ nav {
     float: left;
     width: 40%; }
 
-.slider-holder {
-  outline: 1px solid #2ecc71;
-  width: 500px;
-  height: 500px;
-  top: 100;
-  left: 100; }
+#item_description {
+  height: 80px; }
+
+@media (max-width: 500px) {
+  body {
+    margin: 0;
+    width: 100%; }
+
+  #container {
+    width: 98%; }
+    #container .item {
+      width: 48%;
+      margin: 1%; }
+    #container .single-item {
+      outline: 1px solid black; }
+
+  nav {
+    width: 100%; }
+    nav article {
+      padding: 5px 0;
+      margin: 0;
+      text-align: center; }
+      nav article h1 {
+        font-size: 20px; }
+    nav .search {
+      width: 90%; }
+      nav .search input {
+        background: url(../images/search.png) no-repeat center right;
+        padding: 20px 15px;
+        font-size: 20px;
+        line-height: 20px;
+        margin: 0;
+        color: #ecf0f1;
+        width: 98%;
+        margin: 0 1%; }
+    nav .logo {
+      width: 100%;
+      display: none; }
+    nav .your-account {
+      width: 100%;
+      margin-bottom: 5px; }
+
+  .form-holder {
+    width: 100%;
+    margin: 2px 0;
+    outline: 1px dashed black; }
+    .form-holder header {
+      text-align: center; }
+      .form-holder header h1 {
+        font-size: 20px; }
+    .form-holder input {
+      width: 70%;
+      margin: 5px 15%;
+      float: left;
+      text-align: center;
+      border-radius: 4px; }
+    .form-holder button {
+      margin: 5px 30%;
+      float: left;
+      width: 40%;
+      height: 40px; }
+
+  #item_description {
+    height: 80px; } }

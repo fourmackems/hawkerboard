@@ -17,9 +17,18 @@ nav {
 
 .search {
   input {
-    background: url(../images/search.png) no-repeat center right;
-    padding: 15px;
+    background: url(../images/search-2x.png) no-repeat center right;
+    padding: 30px 15px;
+    font-size: 30px;
+    line-height: 30px;
     margin: 0;
     color: $clouds;
+    width: 70%;
+    margin: 0 15%;
   }
 }
+
+.search-logo {
+      width: 80%;
+      margin: 0 5%;
+    }

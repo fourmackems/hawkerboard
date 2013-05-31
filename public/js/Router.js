@@ -9,6 +9,8 @@ Hawkerboard = Backbone.Router.extend({
 		"product/:the_cid": "productView",
 		"additem": "addItem",
 		"sign-up": "signup",
+		"login": "login",
+		"logout": "logout",
 	},
 
 	index: function(){
@@ -27,8 +29,13 @@ Hawkerboard = Backbone.Router.extend({
 	},
 
 	signup: function(){
-		var signupView = new SignupView({el: '#container',});
+		var signupView = new SignupView({el: '#container'});
 		signupView.render();
-	}
+	},
+
+	login: function() {
+		var loginView = new LoginView({el: '#container'});
+		loginView.render();
+	},
 
 })

@@ -27,9 +27,33 @@ class Hawkerboard < Sinatra::Base
     User.create(JSON.parse(request.body.read.to_s))
   end
 
+  post '/login' do #why json?
+    content_type :json
+
+    user = User.first({:conditions=>{:username=>params['username']}})
+
+    if user.nil?
+      {logged_in: false}.to_json
+
+    elsif user.password == params['password']
+      session[:user] = user._id
+      {logged_in: true}.to_json
+
+    else
+      {logged_in: false}.to_json
+    end
+  end
+
+  post '/logout' do
+    session[:user] = nil
+    redirect '/'
+  end
+
   # for adding a new item
   post '/items' do
-    Item.create(JSON.parse(request.body.read.to_s))
+    data = JSON.parse(request.body.read.to_s)
+    data['tags'] = data['tags'].split(',')
+    Item.create(data)
     #so how do we redirect to a confirmation page but within the backbone app...!? (Matt)
   end
 
