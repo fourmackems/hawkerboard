@@ -1,9 +1,16 @@
+// Base Variables //
+
 @import 'colors';
 @import 'base';
 @import 'layout';
+
+// Look & Feel //
 @import 'lookandfeel/site_wide';
 @import 'lookandfeel/nav';
 @import 'lookandfeel/footer';
 @import 'lookandfeel/item';
 @import 'lookandfeel/form';
-@import 'slider_temp';
+
+
+// Media Queries //
+@import 'mediaqueries/mediaqueries';
