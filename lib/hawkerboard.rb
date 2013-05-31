@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'mongoid'
 require 'stripe'
 require_relative 'item'
+require_relative 'user'
 
 class Hawkerboard < Sinatra::Base
 
@@ -60,8 +61,8 @@ end
   end
 
   # for allowing a user to sign up
-  post 'sign_up' do
-    user = User.create!(:username =>params['username'], :password => params['password'])
+  post '/users' do
+    User.create(JSON.parse(request.body.read.to_s))
   end
 
   # for adding a new item
