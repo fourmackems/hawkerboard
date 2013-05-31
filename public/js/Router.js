@@ -29,6 +29,12 @@ Hawkerboard = Backbone.Router.extend({
 	signup: function(){
 		var signupView = new SignupView({el: '#container',});
 		signupView.render();
+	},
+
+	thankyou: function(){
+		var thankyouView = ThankYouView({el: '#container',});
 	}
+
+
 
 })
