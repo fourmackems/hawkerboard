@@ -89,6 +89,7 @@ IndexView = Backbone.View.extend({
 		this.collection.forEach(this.renderItem);
     $('#searchbox').on('keyup', $.proxy(this.search, this));
 		$('#add-item-button').on('click', this.displayAddItem);
+    $('#sign-up-button').on('click', this.signup);
 	},
 
 	displayAddItem: function(){
@@ -105,6 +106,10 @@ IndexView = Backbone.View.extend({
     var searchQuery = $('#searchbox').val();
     var result = this.collection.where({title: searchQuery});
     _.each(result, this.renderItem);
+  },
+
+  signup: function() {
+    hawkerboard.navigate("/sign-up", true);
   }
 });
 
@@ -121,5 +126,23 @@ AddItemView = Backbone.View.extend({
 		var addItemForm = new AddItemFormView({el: "#container", collection: this.collection})
 		addItemForm.render();
 	}
+});
+
+SignupView = Backbone.View.extend({
+  events: {
+    "click #sign-up": "signup"
+  },
+  render: function() {
+    var source = $("#sign-up-form-template").html();
+    var template = Handlebars.compile(source);
+    this.$el.html(template);
+  },
+  signup: function() {
+    var username = $('#username').val();
+    var password = $('#password').val();
+    var user = new User({username: username, password: password});
+    user.save();
+    hawkerboard.navigate("/", true);
+  }
 });
 

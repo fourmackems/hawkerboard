@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'mongoid'
 require_relative 'item'
+require_relative 'user'
 
 class Hawkerboard < Sinatra::Base
 
@@ -22,9 +23,8 @@ class Hawkerboard < Sinatra::Base
   end
 
   # for allowing a user to sign up
-  post 'sign_up' do
-    user = User.create!(:username =>params['username'], :password => params['password'])
-    #so how do we redirect to the add a new item but within the backbone app...!? (Matt)
+  post '/users' do
+    User.create(JSON.parse(request.body.read.to_s))
   end
 
   # for adding a new item
