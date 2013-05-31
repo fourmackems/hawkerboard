@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'mongoid'
+require 'stripe'
 require_relative 'item'
 require_relative 'user'
 
@@ -8,15 +9,48 @@ class Hawkerboard < Sinatra::Base
   #this class is a controller
   #this is the app too! - because it is inheriting from Sinatra::Base
 
+  #from the Strip Tutorial (part1)
+  set :publishable_key, 'pk_test_VXWpWC81B0aNirU54T9XzUEH'
+  set :secret_key, "sk_test_FfmJ08mn4ciYHkwNKYOz0J2z"
+  Stripe.api_key = settings.secret_key
+
+
   set :views, File.join(File.dirname(__FILE__), '../views')
   set :public_folder, File.join(File.dirname(__FILE__), '../public')
   use Rack::Session::Cookie, {:http_only => false}
 
   Mongoid.load!(File.join(File.dirname(__FILE__),'mongoid.yml'))
 
+
+  #RUBY STUFF BELOW HERE
+
   get '/' do
     erb :index
   end
+
+  #from the Stripe Tutorial (part2)
+
+
+
+  post '/charge'  do
+
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :card  => params[:stripeToken]
+  )
+
+  charge = Stripe::Charge.create(
+    :amount      => params['charge'],
+    :description => 'Sinatra Charge',
+    :currency    => 'gbp',
+    :customer    => customer
+  )
+end
+
+error Stripe::CardError do
+    env['sinatra.error'].message
+end
+
 
   get '/items' do
     content_type :json
@@ -63,3 +97,4 @@ class Hawkerboard < Sinatra::Base
   # really not sure what this is for (Matt)
 
 end
+

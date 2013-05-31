@@ -38,4 +38,8 @@ Hawkerboard = Backbone.Router.extend({
 		this.loginView.render();
 	},
 
+	thankyou: function(){
+		var thankyouView = ThankYouView({el: '#container',});
+	},
+
 })
