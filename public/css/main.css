@@ -68,14 +68,17 @@ nav {
     background-size: cover;
     background-color: white;
     border: 10px solid white;
-    min-height: 300px; }
+    min-height: 300px;
+    /*section:hover {
+      height: 180px;
+    }*/ }
     #container .item section {
       position: absolute;
       outline: 1px dashed black;
       width: 100%;
       padding: 10px;
       bottom: 0;
-      height: 50px;
+      height: 180px;
       overflow: hidden;
       background-color: rgba(255, 255, 255, 0.9); }
       #container .item section .price {
@@ -88,8 +91,6 @@ nav {
         text-align: center; }
       #container .item section p {
         font-size: 16px; }
-    #container .item section:hover {
-      height: 180px; }
     #container .item ul {
       width: 100%;
       margin: 0 auto; }
