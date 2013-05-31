@@ -126,6 +126,9 @@ nav {
 #item_description {
   height: 80px; }
 
+.payment input {
+  display: none; }
+
 @media (max-width: 500px) {
   body {
     margin: 0;

@@ -64,20 +64,25 @@
           <h1>{{title}}</h1>
           <p>{{description}}</p>
           <p class="price">£{{price}}</p>
-          <dt>
+          <ul>
             {{#each tags}}
-            <p>{{this}}</p>
+            <li>{{this}}</li>
             {{/each}}
-          </dt>
+          </ul>
 
           <form action="/charge" method="post" class="payment">
             <article>
               <label class="amount">
-                <span>Amount: $5.00</span>
+                <span>Amount: {{price}}</span>
+                <input name="charge" value="{{price}}">
               </label>
             </article>
             <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                data-key="<%= settings.publishable_key %>"></script>
+                data-key="<%= settings.publishable_key %>"
+                data-name="Hawkerboard"
+                data-amount="{{price}}"
+                >
+            </script>
           </form>
 
         </section>

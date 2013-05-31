@@ -31,8 +31,7 @@ class Hawkerboard < Sinatra::Base
 
 
 
-  post '/charge' do
-  @amount = 500
+  post '/charge'  do
 
   customer = Stripe::Customer.create(
     :email => 'customer@example.com',
@@ -40,7 +39,7 @@ class Hawkerboard < Sinatra::Base
   )
 
   charge = Stripe::Charge.create(
-    :amount      => @amount,
+    :amount      => params['charge'],
     :description => 'Sinatra Charge',
     :currency    => 'gbp',
     :customer    => customer
