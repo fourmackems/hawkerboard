@@ -10,7 +10,8 @@ class Hawkerboard < Sinatra::Base
 
   set :views, File.join(File.dirname(__FILE__), '../views')
   set :public_folder, File.join(File.dirname(__FILE__), '../public')
-  # enable :sessions
+  use Rack::Session::Cookie, {:http_only => true}
+
   Mongoid.load!(File.join(File.dirname(__FILE__),'mongoid.yml'))
 
   get '/' do
@@ -44,9 +45,8 @@ class Hawkerboard < Sinatra::Base
     end
   end
 
-  post '/logout' do
+  get '/logout' do
     session[:user] = nil
-    redirect '/'
   end
 
   # for adding a new item

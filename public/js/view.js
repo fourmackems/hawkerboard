@@ -120,8 +120,11 @@ IndexView = Backbone.View.extend({
   },
 
   logout: function() {
-    hawkerboard.navigate("/logout", true);
-  },
+    $.get('/logout', {}, function() {
+      document.cookie = 'rack.session=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      hawkerboard.navigate("/", true);
+    });
+  }
 });
 
 
