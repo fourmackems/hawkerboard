@@ -108,7 +108,8 @@ nav {
 
 .form-holder {
   width: 60%;
-  margin: 5% 20%; }
+  margin: 5% 20%;
+  outline: 1px dashed black; }
   .form-holder header {
     text-align: center; }
   .form-holder input {
